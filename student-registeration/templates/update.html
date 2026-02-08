@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Update Student</h1>
+
+        <!-- Update Form -->
+        <form method="POST" class="student-form">
+            <label>Full Name</label>
+            <input type="text" name="name" value="{{ student[1] }}" placeholder="Enter full name" required>
+
+            <label>Email</label>
+            <input type="email" name="email" value="{{ student[2] }}" placeholder="Enter email address" required>
+
+            <label>Phone Number</label>
+            <input type="text" name="phone" value="{{ student[3] }}" placeholder="Enter phone number" required>
+
+            <label>DOB</label>
+            <input type="date" name="dob" value="{{ student[4] }}" required>
+
+            <label>Select Course</label>
+            <select name="course" required>
+                <option value="">-- Select Course --</option>
+                <option value="BCA" {% if student[5] == 'BCA' %}selected{% endif %}>BCA</option>
+                <option value="BBA" {% if student[5] == 'BBA' %}selected{% endif %}>BBA</option>
+                <option value="B.Tech" {% if student[5] == 'B.Tech' %}selected{% endif %}>B.Tech</option>
+                <option value="MCA" {% if student[5] == 'MCA' %}selected{% endif %}>MCA</option>
+            </select>
+
+            <button type="submit">Update Student</button>
+        </form>
+
+        <a href="/" class="back">Back to Student List</a>
+    </div>
+</body>
+</html>

@@ -26,7 +26,4 @@ The project allows users to register students and manage their records through a
 - **Database:** SQLite  
 - **Frontend:** HTML, CSS  
 
----
-
-## 📂 Project Structure
 
